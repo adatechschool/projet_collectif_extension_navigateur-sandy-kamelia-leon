@@ -3,6 +3,10 @@
   "version":"1.0.0",
   "description": "Remplacer les mots par des emojis ",
   "manifest_version": 3,
+  "action":{
+   "default_popup": "popup/popup.html",
+   "default_icon": "image/hello_extensions.png"
+},
   "content_scripts": [
      {
           "matches": ["*://*/*"],
