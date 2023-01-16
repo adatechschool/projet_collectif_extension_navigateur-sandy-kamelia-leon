@@ -1,16 +1,14 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "permissions": ["activeTab", "scripting"],
-    "action": {
-      "default_popup": "popup/popup.html",
-      "default_icon": "image/hello_extensions.png"
-    },
-
-    "background":{
-      "service_worker": "background.js"
-    }
-      
-  }
+  "name":"Word Replacer",
+  "version":"1.0.0",
+  "description": "Remplacer les mots par des emojis ",
+  "manifest_version": 3,
+  "content_scripts": [
+     {
+          "matches": ["*://*/*"],
+          "all_framers": true,
+          "js": ["word_replace.js"],
+          "run_at": "document_end"
+     }
+  ]
+ }
