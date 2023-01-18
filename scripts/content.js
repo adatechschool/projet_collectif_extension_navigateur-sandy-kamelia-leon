@@ -121,9 +121,11 @@ articles.forEach(article => {
     const words = text.matchAll(wordMatchRegExp);
     const wordCount = [...words].length;
     const readingTime = Math.round(wordCount / 200);
+    const time = readingTime%60
+    const readingTimeInHour = (readingTime-time)/60
     const badge = document.createElement("p");
     badge.classList.add("color-secondary-text", "type--caption");
-    badge.textContent = `⏱️ ${readingTime} min read`;
+    badge.textContent = `⏱️ ${readingTimeInHour+"h"+time} min read`;
 
     article.insertAdjacentElement("afterbegin", badge);
   }
